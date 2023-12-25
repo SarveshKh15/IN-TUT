@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-header">
+    <div class="row align-items-center">
+        <div class="col">
+            <h3 class="page-title">Add Academic Year</h3>
+            <ul class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="{% url 'academiclist' %}">Academic Year</a></li> 
+                <li class="breadcrumb-item active">Add Academic Year</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% include 'includes/messages.html' %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <form action="{% url 'addacademic' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="form-title"><span>Academic Year Information</span></h5>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label>Academic Year Start</label>
+                                <input type="date" class="form-control" name='start'>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label>Academic Year End</label>
+                                <input type="date" class="form-control" name='end'>
+
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,114 @@
+<script>
+
+$(document).ready(function() {
+
+	// Pie chart
+	
+
+    var options = {
+        series: [{{student}},{{staff}},{{subject}},{{branch}}],
+        chart: {
+        width: 487,
+        type: 'donut',
+      },
+     
+     
+      
+      
+      
+      fill: {
+        type: 'gradient',
+      },
+    
+
+      labels:['Student %','Staff %','Subject %','Branch %' ],
+     
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200
+          },
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+    
+    
+
+	// Bar chart
+	
+	if ($('#stugender').length > 0) {
+	var optionsBar = {
+		chart: {
+			type: 'bar',
+			height: 350,
+			width: '100%',
+			stacked: true,
+			toolbar: {
+				show: false
+			},
+		},
+		dataLabels: {
+			enabled: false
+		},
+		plotOptions: {
+			bar: {
+				columnWidth: '45%',
+			}
+		},
+		series: [{
+			name: "Boys",
+			color: '#fdbb38',
+			data: [{{boys}}],
+		}, {
+			name: "Girls",
+			color: '#19affb',
+			data: [{{girls}}],
+		}],
+		labels: [2023],
+		xaxis: {
+			labels: {
+				show: false
+			},
+			axisBorder: {
+				show: false
+			},
+			axisTicks: {
+				show: false
+			},
+		},
+		yaxis: {
+			axisBorder: {
+				show: false
+			},
+			axisTicks: {
+				show: false
+			},
+			labels: {
+				style: {
+					colors: '#777'
+				}
+			}
+		},
+		title: {
+			text: '',
+			align: 'left',
+			style: {
+				fontSize: '18px'
+			}
+		}
+
+	}
+  
+	var chartBar = new ApexCharts(document.querySelector('#stugender'), optionsBar);
+	chartBar.render();
+	}
+  
+});
+</script>

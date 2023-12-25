@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="post" action="{% url 'submitstaffleave' %}" enctype="multipart/form-data">
+                              {% csrf_token %}
+                                 <div class="col-12">
+                                    <h5 class="form-title"><span> Leave Application</span></h5>
+                                 </div>
+
+                                 {% include 'includes/messages.html' %}
+
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Reason</label>
+                                       <textarea class="form-control" name="reason" style="height: 200px" required> </textarea>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>From </label>
+                                       <input type="date" class="form-control" name="fromdate" required>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>To</label>
+                                       <input type="date" class="form-control" name="todate" required>
+
+                                    </div>
+                                 </div>
+
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Apply Leave</button>
+                                 </div>
+        
+                           
+
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+{% endblock %}

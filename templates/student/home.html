@@ -1,0 +1,113 @@
+{% extends 'base.html' %}{% block content %}
+<h2>  {{s|length}} Subject Assigned </h2>
+<br>
+
+<div class="row">
+    {% for i in s %}
+    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+       <div class="card bg-four w-100">
+          <div class="card-body">
+             <div class="db-widgets d-flex justify-content-between align-items-center">
+                <div class="db-icon">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <div class="db-info">
+                   <h4>{{i}} </h4>
+
+                   <h6>Branch: {{i.branch}}</h6>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    
+    {% endfor %}
+</div>
+<h2>   Leave Applied </h2>
+<br>
+<div class="row">
+
+
+
+    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+        <div class="card bg-one w-100">
+           <div class="card-body">
+              <div class="db-widgets d-flex justify-content-between align-items-center">
+                 <div class="db-icon">
+                     <i class="fas fa-book-reader"></i>
+                 </div>
+                 <div class="db-info">
+                    <h4>Total Leave {{l|length}} </h4>
+ 
+                    <h6></h6>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+
+     <div class="col-xl-3 col-sm-6 col-12 d-flex" >
+        <div class="card bg-six w-100" style="background-color:rgb(207, 250, 221)" >
+           <div class="card-body">
+              <div class="db-widgets d-flex justify-content-between align-items-center">
+                 <div class="db-icon">
+                     <i class="fas fa-book-reader"></i>
+                 </div>
+                 <div class="db-info">
+                    <h4>Under Review {{l1|length}} </h4>
+ 
+                    <h6></h6>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="col-xl-3 col-sm-6 col-12 d-flex">
+        <div class="card bg-three w-100">
+           <div class="card-body">
+              <div class="db-widgets d-flex justify-content-between align-items-center">
+                 <div class="db-icon">
+                     <i class="fas fa-book-reader"></i>
+                 </div>
+                 <div class="db-info">
+                    <h4>Declined {{l3|length}} </h4>
+ 
+                    <h6></h6>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="col-xl-3 col-sm-6 col-12 d-flex">
+        <div class="card bg-two w-100">
+           <div class="card-body">
+              <div class="db-widgets d-flex justify-content-between align-items-center">
+                 <div class="db-icon">
+                     <i class="fas fa-book-reader"></i>
+                 </div>
+                 <div class="db-info">
+                    <h4>Granted {{l2|length}} </h4>
+ 
+                    <h6></h6>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+    
+    <br>
+<br>
+    <h2> Acad Year :  </h2> 
+
+<div class="row">
+   
+    
+    
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

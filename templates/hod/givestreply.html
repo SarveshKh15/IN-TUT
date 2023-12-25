@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="post" action="{% url 'submitstreply'%}" >
+                              {% csrf_token %}
+                                 <div class="col-12">
+                                    <h2 class="form-title"><span>Reply On Feedback </span></h2>
+                                 </div>
+
+                                 {% include 'includes/messages.html' %}
+
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label><h4>Reply </h4></label><br><br>
+                                       <h5 style="background-color:lightgrey;color:black" > ~
+                                        {{reply.feedback}}
+                                        </h5>
+                                        <input type="text" name="id" value={{reply.id}} hidden>
+                                       <textarea class="form-control" name="givestreply" style="height: 300px;font-size:20px;" required>
+                                        {{reply.feedbackreply}}
+                                       </textarea>
+
+                                    </div>
+                                 </div>
+                                 
+
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary"> Reply</button>
+                                 </div>
+        
+                           
+
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+{% endblock %}

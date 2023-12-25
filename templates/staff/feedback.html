@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="post" action="{% url 'submitstafffeedback'%}" >
+                              {% csrf_token %}
+                                 <div class="col-12">
+                                    <h5 class="form-title"><span> Feedback </span></h5>
+                                 </div>
+
+                                 {% include 'includes/messages.html' %}
+
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Feedback</label>
+                                       <textarea class="form-control" name="feedback" style="height: 300px" required> </textarea>
+
+                                    </div>
+                                 </div>
+                                 
+
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Send Feedback</button>
+                                 </div>
+        
+                           
+
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+{% endblock %}
